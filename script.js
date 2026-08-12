@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ⚠️ GOOGLE APPS SCRIPT WEB APP URL
-    const API_URL = 'https://script.google.com/macros/s/AKfycbzvZdNKo6W3WP28RUNXobzMUmNyMSnjLkdVH_nn67gGaCrHzFRwfthW5kYjdSXWMQd3/exec';
+    const API_URL = 'https://script.google.com/macros/s/AKfycbykBasezQeVMdXDlO4ZlLy9Djy5ArLlFtGnpeRLGwDV2OU5pIx_Dd827UMNgf_Jg4V_/exec';
 
     // 👉 LA VARIABLE DOIT ÊTRE ICI
     let currentLang = 'en';
