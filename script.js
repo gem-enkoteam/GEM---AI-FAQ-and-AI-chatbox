@@ -320,16 +320,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 3. Send request to your Apps Script Web App
             try {
+                // 👉 1. GRAB THE CLOUDFLARE TOKEN
+                const turnstileToken = turnstile.getResponse();
+
                 const response = await fetch(API_URL, {
                     method: 'POST',
                     // Sending as text/plain prevents CORS preflight errors in Google Apps Script
                     body: JSON.stringify({ 
                         message: messageText, 
-                        history: chatHistory 
+                        history: chatHistory,
+                        lang: currentLang, // We added this earlier for translation
+                        cfToken: turnstileToken // 👉 2. SEND TOKEN TO GOOGLE
                     })
                 });
 
                 const data = await response.json();
+                
+                // 👉 3. RESET THE WIDGET FOR THE NEXT QUESTION
+                turnstile.reset();
                 
                 // Remove thinking bubble safely
                 const thinkingElement = document.getElementById(thinkingId);
