@@ -550,3 +550,4 @@ function formatChatReply(text) {
     formatted = formatted.replace(/\n/g, '<br>');
  
     return formatted;
+}
